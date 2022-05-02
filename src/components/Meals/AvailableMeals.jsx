@@ -9,7 +9,7 @@ import classes from './AvailableMeals.module.css'
 export default function AvailableMeals() {
     const [meals, setMeals] = useState([])
     useEffect(() => {
-        axios.get(process.env.VITE_APP_DATABASE_URL) 
+        axios.get(process.env.VITE_APP_DATABASE_URL + '/meals.json') 
             .then(response => {
                 const loadedMeals = []
                 for (const key in response.data) {
